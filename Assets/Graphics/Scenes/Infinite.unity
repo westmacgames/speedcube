@@ -336,7 +336,7 @@ MonoBehaviour:
   midCheckLeft: {fileID: 1944688792}
   midCheckRight: {fileID: 1740649803}
   spawnDistance: 40
-  spawnRate: 0.4
+  spawnRate: 0.6
   canSpawn: 1
 --- !u!4 &406592408
 Transform:
@@ -497,7 +497,7 @@ MonoBehaviour:
   middle: {fileID: 487021156}
   left: {fileID: 996267192}
   positionIndex: 0
-  movementSpeed: 28
+  movementSpeed: 30
   smoothSpeed: 0.1
 --- !u!54 &456716056
 Rigidbody:

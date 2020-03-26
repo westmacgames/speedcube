@@ -24,7 +24,7 @@ public class MapGenerator : MonoBehaviour
     public float spawnDistance;
 
     //Spawn a lane every second.
-    public float spawnRate = 1f;
+    public float spawnRate = 1.6f;
 
     //Assures the coroutine isnt ran every frame.
     public bool canSpawn = true;

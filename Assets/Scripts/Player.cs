@@ -61,28 +61,9 @@ public class Player : MonoBehaviour
             transform.Translate(transform.forward * -movementSpeed * Time.deltaTime);
         }
 
-        //Grab touchcount
-        int nTouch = Input.touchCount;
-
-        for (int i = 0; i < nTouch; i++)
-        {
-            //Grab data from the touch
-            Touch touch = Input.GetTouch(i);
-            TouchPhase phase = touch.phase;
-
-            if (phase == TouchPhase.Began)
-            {
-                //Check the half of the screen it is on
-                if (touch.position.x > Screen.width / 2)
-                {
-                    Right();
-                }
-                else
-                {
-                    Left();
-                }
-            }
-        }
+        DebugInput();
+        TouchInput();
+        
         //Reset position index if it is out of bounds.
         if (positionIndex > 1)
         {
@@ -117,4 +98,45 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Intended for PC / debugging
+    public void DebugInput()
+    {
+        if (Input.GetButtonDown("Right") && !blockInput)
+        {
+            Right();
+        } 
+
+        if (Input.GetButtonDown("Left") && !blockInput)
+        {
+            Left();
+        }
+    }
+
+    //Mobile touch input
+    private void TouchInput ()
+    {
+        //Grab touchcount
+        int nTouch = Input.touchCount;
+
+        //Touch Input
+        for (int i = 0; i < nTouch; i++)
+        {
+            //Grab data from the touch
+            Touch touch = Input.GetTouch(i);
+            TouchPhase phase = touch.phase;
+
+            if (phase == TouchPhase.Began)
+            {
+                //Check the half of the screen it is on
+                if (touch.position.x > Screen.width / 2)
+                {
+                    Right();
+                }
+                else
+                {
+                    Left();
+                }
+            }
+        }
+    }
 }
