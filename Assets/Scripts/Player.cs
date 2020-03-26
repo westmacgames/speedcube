@@ -60,7 +60,29 @@ public class Player : MonoBehaviour
             //Move the player forward.
             transform.Translate(transform.forward * -movementSpeed * Time.deltaTime);
         }
-        
+
+        //Grab touchcount
+        int nTouch = Input.touchCount;
+
+        for (int i = 0; i < nTouch; i++)
+        {
+            //Grab data from the touch
+            Touch touch = Input.GetTouch(i);
+            TouchPhase phase = touch.phase;
+
+            if (phase == TouchPhase.Began)
+            {
+                //Check the half of the screen it is on
+                if (touch.position.x > Screen.width / 2)
+                {
+                    Right();
+                }
+                else
+                {
+                    Left();
+                }
+            }
+        }
         //Reset position index if it is out of bounds.
         if (positionIndex > 1)
         {

@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject endGamePanel;
     public TextMeshProUGUI endGameScoreText;
-
-    //Other objects that are turned off when game ends.
-    public GameObject[] other;
     //Score variable.
     private float score;
 
@@ -54,10 +51,7 @@ public class GameManager : MonoBehaviour
         endGamePanel.SetActive(true);
         scoreText.gameObject.SetActive(false);
         endGameScoreText.text = "FINAL SCORE: " + (int)score;
-        for (int i = 0; i < other.Length; i++)
-        {
-            other[i].SetActive(false);
-        }
+
         //Stops player movement but allows GUI and key input.
         Time.timeScale = 0;
         
