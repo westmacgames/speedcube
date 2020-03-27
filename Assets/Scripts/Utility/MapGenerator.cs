@@ -80,7 +80,7 @@ public class MapGenerator : MonoBehaviour
             if (midCheckRange == 0)
             {
                 midCheck1 = Instantiate(_obstacle, new Vector3(midCheckLeft.transform.position.x,
-                                       pos.y + 0.5f,
+                                       pos.y,
                                        pos.z), Quaternion.identity);
             }
 
@@ -88,7 +88,7 @@ public class MapGenerator : MonoBehaviour
             if (midCheckRange == 1)
             {
                 midCheck1 = Instantiate(_obstacle, new Vector3(midCheckRight.transform.position.x,
-                                        pos.y + 0.5f,
+                                        pos.y,
                                         pos.z), Quaternion.identity);
             }
 
@@ -112,19 +112,19 @@ public class MapGenerator : MonoBehaviour
     {
         //Right
         if (index == 1) { GameObject obstacle = Instantiate(_obstacle, new Vector3(right.transform.position.x, 
-            pos.y + 0.5f,
+            pos.y,
             pos.z), Quaternion.identity); return obstacle;
         }
 
         //Left
         if (index == -1) { GameObject obstacle = Instantiate(_obstacle, new Vector3(left.transform.position.x,
-            pos.y + 0.5f,
+            pos.y,
             pos.z), Quaternion.identity); return obstacle;
         }
 
         //Middle
         if (index == 0) { GameObject obstacle = Instantiate(_obstacle, new Vector3(middle.transform.position.x,
-            pos.y + 0.5f,
+            pos.y,
             pos.z), Quaternion.identity); return obstacle;
         }
         return null;
