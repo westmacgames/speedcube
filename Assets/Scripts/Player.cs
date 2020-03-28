@@ -52,26 +52,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
-    {
+    {       
+        DebugInput();
+        TouchInput();
+
         if (!blockMovement)
         {
             //Move the player forward.
             transform.Translate(transform.forward * -movementSpeed * Time.deltaTime);
-        }
-
-        DebugInput();
-        TouchInput();
-        
-        //Reset position index if it is out of bounds.
-        if (positionIndex > 1)
-        {
-            positionIndex = 1;
-        }
-        if (positionIndex < -1)
-        {
-            positionIndex = -1;
         }
 
         //Set player x position based on index.
@@ -90,6 +84,18 @@ public class Player : MonoBehaviour
         if (positionIndex == 0) { transform.position = Vector3.SmoothDamp(transform.position,
             new Vector3(middle.position.x, transform.position.y, transform.position.z), ref velocity, smoothSpeed);
         }
+        
+        //Reset position index if it is out of bounds.
+        if (positionIndex > 1)
+        {
+            positionIndex = 1;
+        }
+        if (positionIndex < -1)
+        {
+            positionIndex = -1;
+        }
+
+        
 
         //Go to the main menu with escape.
         if (Input.GetButtonDown("Cancel"))

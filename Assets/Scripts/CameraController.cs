@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //Move the camera to the target, with smoothed movement. Offset added to keep the view.
         transform.position = Vector3.SmoothDamp(this.transform.position, target.transform.position + offset, ref velocity, cameraMoveSpeed * Time.deltaTime);

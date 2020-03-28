@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MenuGUIFunctions : MonoBehaviour
 {
-    //Sets the level to LVL1. Begins the game.
+    //Sets the level to Infinite. Begins the game.
     public void StartGame()
     {
         SceneManager.LoadScene("Infinite");
