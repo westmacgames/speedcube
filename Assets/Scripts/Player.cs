@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 public class Player : MonoBehaviour
 {
     //Stops all input if true.
@@ -52,13 +54,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
     // Update is called once per frame
     void Update()
-    {       
+    {      
+        //Debug input is intended for PC.
         DebugInput();
         TouchInput();
 
@@ -70,6 +69,7 @@ public class Player : MonoBehaviour
 
         //Set player x position based on index.
 
+        //Movement functions. Uses SmoothDamp() to put player into the lane using the index.
         //Move the player with a bit of a delay to the desired lane.
         //Left
         if (positionIndex == -1) { transform.position = Vector3.SmoothDamp(transform.position, 
@@ -93,9 +93,7 @@ public class Player : MonoBehaviour
         if (positionIndex < -1)
         {
             positionIndex = -1;
-        }
-
-        
+        }        
 
         //Go to the main menu with escape.
         if (Input.GetButtonDown("Cancel"))

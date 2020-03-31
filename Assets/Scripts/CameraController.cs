@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 public class CameraController : MonoBehaviour
 {
     //Reference to the object to follow.

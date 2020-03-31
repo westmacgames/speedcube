@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 public class Lane : MonoBehaviour
 {
     public float deathTime = 4.0f;

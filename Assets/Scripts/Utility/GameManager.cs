@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+
+/* Copyright © 2020 WestMac All Rights Reserved */
 
 //Tracks score and other game data.
 public class GameManager : MonoBehaviour
@@ -11,10 +14,11 @@ public class GameManager : MonoBehaviour
     public GameObject endGamePanel;
     public TextMeshProUGUI endGameScoreText;
     //Score variable.
-    private float score;
+    public float score;
 
     //Game is over.
     private bool endGame;
+
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +46,8 @@ public class GameManager : MonoBehaviour
     {
         //If they restart the game, it should set this to false.
         endGame = false;
+
+        DontDestroyOnLoad(this);
     }
     
     //Ran from OnTriggerEnter() from any obstacle colliding with the Player.
@@ -53,9 +59,15 @@ public class GameManager : MonoBehaviour
         endGameScoreText.text = "FINAL SCORE: " + (int)score;
 
         //Stops player movement but allows GUI and key input.
-        Time.timeScale = 0;
+        Time.timeScale = 0;       
         
         //Allows after game input checking.
         endGame = true;
+    }
+
+    public static void OpenMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

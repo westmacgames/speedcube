@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 //Uses a timestamp method to destroy the object after player zooms by it.
 public class Obstacle : MonoBehaviour
 {

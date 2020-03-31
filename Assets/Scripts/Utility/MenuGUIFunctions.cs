@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 public class MenuGUIFunctions : MonoBehaviour
 {
     //Sets the level to Infinite. Begins the game.

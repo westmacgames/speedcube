@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Copyright © 2020 WestMac All Rights Reserved */
+
 public class MapGenerator : MonoBehaviour
 {
     //TODO Implement this class in an "infinite" mode.
