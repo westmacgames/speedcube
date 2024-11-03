@@ -46,8 +46,6 @@ public class GameManager : MonoBehaviour
     {
         //If they restart the game, it should set this to false.
         endGame = false;
-
-        DontDestroyOnLoad(this);
     }
     
     //Ran from OnTriggerEnter() from any obstacle colliding with the Player.
